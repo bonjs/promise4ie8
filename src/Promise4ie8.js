@@ -3,6 +3,7 @@
  *	email	: ske@163.com
  *	date	: 二○一六年十一月二十四日
  */
+// 使用方法和Promise一样，后期将改Promise4ie8为Promise，对原生Promise是否支持自动判断
 var Promise4ie8 = function() {
 	
 	var callbacks = [];

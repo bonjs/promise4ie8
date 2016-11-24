@@ -1,6 +1,8 @@
 # promise4ie8
 Promise在ie8等不支持Promise浏览器上的实现
 
+### 使用方法和Promise一样，后期将改Promise4ie8为Promise，对原生Promise是否支持自动判断
+
 ### 安装
 ~~~ javascript
 git clone https://github.com/bonjs/promise4ie8.git

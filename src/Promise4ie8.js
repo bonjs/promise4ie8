@@ -1,23 +1,22 @@
 ﻿/**
- *	author	: alex
- *	email	: ske@163.com
- *	date	: 二○一六年十一月二十四日
- */
+ * author	: alex
+ * email	: ske@163.com
+ * date		: 二○一六年十一月二十四日
+ */ 
 // 使用方法和Promise一样，后期将改Promise4ie8为Promise，对原生Promise是否支持自动判断
 var Promise4ie8 = function() {
-	
+	if(typeof Promise != 'undefined') {
+		//return Promise;
+	}
 	var callbacks = [];
-	return function(f) {
+	return function(fn) {
 		var me = this;
 		var _selfF = arguments.callee;
 	
-		f(function(data) {
+		fn(function(data) {
 			var cb = callbacks.shift();	// 取出并执行
 			cb && cb.call(me, data);
-		}, function(data) {
-			var cb = callbacks.shift();	// 取出但不执行
-			console.error('error');
-		});
+		}, callbacks.shift);
 		return {
 			then: function(callback) {
 				callbacks.push(callback);

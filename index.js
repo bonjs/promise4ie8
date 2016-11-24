@@ -1,24 +1,26 @@
-
+ï»¿
 function f1() {
 	var p = new Promise4ie8(function(resolve, reject) {
 		setTimeout(function() {
-			resolve('Òì²½·µ»ØÊı¾İ1');
+			resolve('å¼‚æ­¥è¿”å›æ•°æ®1');
 		}, 1000);
 	});
 	return p;
 }
+
 function f2() {
 	var p = new Promise4ie8(function(resolve, reject) {
 		setTimeout(function() {
-			resolve('Òì²½·µ»ØÊı¾İ2');
+			resolve('å¼‚æ­¥è¿”å›æ•°æ®2');
 		}, 1000);
 	});
 	return p;
 }
+
 function f3() {
 	var p = new Promise4ie8(function(resolve, reject) {
 		setTimeout(function() {
-			resolve('Òì²½·µ»ØÊı¾İ3');
+			resolve('å¼‚æ­¥è¿”å›æ•°æ®3');
 		}, 1000);
 	});
 	return p;
@@ -30,5 +32,7 @@ f1().then(function(data) {
 }).then(function(data) {
 	console.log(data);
 	return f3();
+}).then(function(data) {
+	console.log(data);
 });
 

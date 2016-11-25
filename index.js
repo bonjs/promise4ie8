@@ -1,6 +1,6 @@
 ﻿
 function f1() {
-	var p = new Promise4ie8(function(resolve, reject) {
+	var p = new Promise(function(resolve, reject) {
 		setTimeout(function() {
 			resolve('异步返回数据1');
 		}, 1000);
@@ -9,7 +9,7 @@ function f1() {
 }
 
 function f2() {
-	var p = new Promise4ie8(function(resolve, reject) {
+	var p = new Promise(function(resolve, reject) {
 		setTimeout(function() {
 			resolve('异步返回数据2');
 		}, 1000);
@@ -18,7 +18,7 @@ function f2() {
 }
 
 function f3() {
-	var p = new Promise4ie8(function(resolve, reject) {
+	var p = new Promise(function(resolve, reject) {
 		setTimeout(function() {
 			resolve('异步返回数据3');
 		}, 1000);

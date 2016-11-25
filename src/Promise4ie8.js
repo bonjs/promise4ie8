@@ -25,3 +25,14 @@ var Promise = function() {
 		};
 	};
 }();
+
+Promise.resolve = function() {
+	alert('ok');
+}
+
+Promise.reject = function() {
+	alert('ok');
+}
+Promise.all = function() {
+	alert('ok');
+}

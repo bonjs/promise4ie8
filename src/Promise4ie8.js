@@ -9,7 +9,8 @@ var Promise = function() {
 		//return Promise;
 	}
 	var callbacks = [];
-	return function(fn) {
+	
+	var F = function(fn) {
 		var me = this;
 		var _selfF = arguments.callee;
 	
@@ -17,13 +18,13 @@ var Promise = function() {
 			var cb = callbacks.shift();	// 取出并执行
 			cb && cb.call(me, data);
 		}, callbacks.shift);
-		return {
-			then: function(callback) {
-				callbacks.push(callback);
-				return new _selfF(function() {});
-			}
-		};
 	};
+	
+	F.prototype.then = function(callback) {
+		callbacks.push(callback);
+		return new F(function() {});
+	};
+	return F;
 }();
 
 Promise.resolve = function() {
